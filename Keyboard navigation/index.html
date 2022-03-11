@@ -8,10 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
-    <head></head>
     <main id="main">
         <div class="wrapper"></div>
     </main>
@@ -51,15 +48,16 @@
             div = document.createElement('div')
             main.appendChild(div)
             row = keys[index]
+
             index2 = 0
             while (index2 < row['length']) {
                 kbd = document.createElement('kbd')
                 kbd.textContent = row[index2]
-
-
+ 
                 button = document.createElement('button')
                 button.textContent = '编辑'
                 button.id = row[index2]
+                
                 button.onclick = function (qwe) {
                     key = qwe['target']['id']
                     x = prompt('给我一个网址')
@@ -67,6 +65,7 @@
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
                 }
+
                 kbd.appendChild(button)
 
                 div.appendChild(kbd)
