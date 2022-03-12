@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <main id="main">
-        <div class="wrapper"></div>
+    <head></head>
+    <main>
+        <div class="wrapper" id="main"></div>
     </main>
     <footer></footer>
     <script>
@@ -46,6 +47,7 @@
         index = 0
         while (index < keys['length']) {
             div = document.createElement('div')
+            div.className='row'
             main.appendChild(div)
             row = keys[index]
 
@@ -53,7 +55,7 @@
             while (index2 < row['length']) {
                 kbd = document.createElement('kbd')
                 kbd.textContent = row[index2]
- 
+                kbd.className='key'
                 button = document.createElement('button')
                 button.textContent = '编辑'
                 button.id = row[index2]
