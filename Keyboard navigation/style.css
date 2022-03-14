@@ -5,6 +5,17 @@
 a {
   text-decoration: none;
 }
+body{
+  background: grey url(./wall.jpg) no-repeat center center;
+  background-size: cover;
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
 kbd {
   border: 1px solid red;
   width: 4em;
@@ -43,6 +54,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 20px;
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
 }
 .row{
@@ -50,4 +62,19 @@ margin: 20px;
 }
 .row .key{
 margin: 0 10px;
+}
+.wrapper{
+  background: rgba(255 ,255,255,0.2);
+  border-radius: 10px;
+}
+.key img{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  
+}
+.key .text{
+  position: absolute;
+  left: 4px;
+  top: 2px;
 }

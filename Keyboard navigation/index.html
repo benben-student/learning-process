@@ -8,7 +8,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+
     <head></head>
     <main>
         <div class="wrapper" id="main"></div>
@@ -47,19 +49,25 @@
         index = 0
         while (index < keys['length']) {
             div = document.createElement('div')
-            div.className='row'
+            div.className = 'row'
             main.appendChild(div)
             row = keys[index]
 
             index2 = 0
             while (index2 < row['length']) {
                 kbd = document.createElement('kbd')
-                kbd.textContent = row[index2]
-                kbd.className='key'
+                span.document.createElement('span')
+                span.textContent = row[index2]
+                span.className = 'text'
+                kbd.appendChild(span)
+                kbd.className = 'key'
                 button = document.createElement('button')
                 button.textContent = '编辑'
                 button.id = row[index2]
-                
+                img = document.createElement('img')
+               if(hash[row[index2]]){
+                img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+               }
                 button.onclick = function (qwe) {
                     key = qwe['target']['id']
                     x = prompt('给我一个网址')
@@ -67,7 +75,7 @@
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
                 }
-
+                kbd.appendChild(img)
                 kbd.appendChild(button)
 
                 div.appendChild(kbd)
