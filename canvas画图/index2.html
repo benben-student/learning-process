@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #canvas{
+            background: green;
+            display: block;
+        }
+        body{
+            margin: 0;
+        }
+        html{
+
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width=300 height=300></canvas>
+</body>
+<script>
+    var div=document.getElementById('canvas')
+    var context=div.getContext('2d')
+
+    // context.strokeStyle='yellow'
+    // context.strokeRect(10,10,100,100)
+    // context.fillStyle='blue'
+    // context.fillRect(10,10,100,100)
+
+    
+    // context.fillStyle='red'
+    // context.beginPath()
+    // context.moveTo(240,240)
+    // context.lineTo(300,240)
+    // context.lineTo(300,300)
+    // context.fill() 
+    // context.arc(150,150,20,0,360)
+
+    var painting=false
+    var lastPoint={x:undefined,y:undefined}
+    div.onmousedown=function(a){
+        painting=true
+        var x=a.clientX
+        var y=a.clientY
+        lastPoint={'x':x,'y':y}
+        console.log(lastPoint)
+        drawCircle(x,y,1)
+    }
+    div.onmousemove=function(a){
+        if(painting){
+           var x=a.clientX
+           var y=a.clientY
+           var newPoint={'x':x,'y':y}
+           drawCircle(x,y,1)
+           drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
+           lastPoint=newPoint
+        }
+    }
+    div.onmouseup=function(a){
+           painting=false
+    }
+    function drawCircle(x,y,radius){
+           context.beginPath()
+           context.fillStyle='black'
+           context.arc(x,y,radius,0,Math.PI*2)
+           context.fill()
+    } 
+    function drawLine(x1,y1,x2,y2){
+           context.beginPath()
+           context.strokeStyle='black'
+           context.moveTo(x1,y1)//起点
+           context.lineWidth=5
+           context.lineTo(x2,y2)
+           context.stroke()
+           context.closePath()
+    }
+</script>
+</html>
