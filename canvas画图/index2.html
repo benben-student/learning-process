@@ -13,17 +13,62 @@
         body{
             margin: 0;
         }
-        html{
-
+    
+        .actions{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+        .actions > #brush{
+            display: none;
+        }
+        .actions.x >#brush{
+            display: inline-block;
+        }
+        .actions.x > #eraser{
+            display: none;
         }
     </style>
 </head>
 <body>
     <canvas id="canvas" width=300 height=300></canvas>
+    <div class="actions" id="actions">
+        <button id="eraser">橡皮擦</button>
+        <button id="brush">画笔</button>
+    </div>
 </body>
 <script>
     var div=document.getElementById('canvas')
     var context=div.getContext('2d')
+
+    autoSetCanvasSize(div)
+
+    listenToMouse(div)
+
+    var eraserEnabled=false
+    eraser.onclick=function(){
+        eraserEnabled=true
+        actions.className='actions x'
+    }
+    brush.onclick=function(){
+        eraserEnabled=false
+        actions.className='actions'
+    }
+
+   function autoSetCanvasSize(canvas){
+       setCanvasSize()
+
+       window.onresize=function(){
+       setCanvasSize()
+    }  
+    function setCanvasSize() {
+       var pageWidth=document.documentElement.clientWidth
+       var pageHeight=document.documentElement.clientHeight
+       canvas.width=pageWidth
+       canvas.height=pageHeight
+    }
+   }
+  
 
     // context.strokeStyle='yellow'
     // context.strokeRect(10,10,100,100)
@@ -42,19 +87,33 @@
     var painting=false
     var lastPoint={x:undefined,y:undefined}
     div.onmousedown=function(a){
-        painting=true
         var x=a.clientX
         var y=a.clientY
-        lastPoint={'x':x,'y':y}
-        console.log(lastPoint)
-        drawCircle(x,y,1)
+        if(eraserEnabled){
+          using=true
+          context.clearRect(x,y,10,10)
+        }else{
+            using=true
+            lastPoint={'x':x,'y':y}
+        }
+        
     }
     div.onmousemove=function(a){
         if(painting){
            var x=a.clientX
            var y=a.clientY
+
+           if(eraserEnabled){
+               if(using){
+                  context.clearRect(x,y,10,10)
+               }
+           }else{
+               if(using){
+                var newPoint={'x':x,'y':y}
+               }
+           }
+
            var newPoint={'x':x,'y':y}
-           drawCircle(x,y,1)
            drawLine(lastPoint.x,lastPoint.y,newPoint.x,newPoint.y)
            lastPoint=newPoint
         }
@@ -76,6 +135,11 @@
            context.lineTo(x2,y2)
            context.stroke()
            context.closePath()
+    }
+
+    var usingEraser=false
+    eraser.onclick=function(){
+        usingEraser=!usingEraser
     }
 </script>
 </html>
