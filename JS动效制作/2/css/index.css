@@ -1,0 +1,266 @@
+.content{
+    width: 1358px;
+    margin: auto;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.ab{
+    position: absolute;
+}
+.rel{
+    position: relative;
+}
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.ab{
+    position: absolute;
+}
+.re{
+    position: relative;
+}
+.bg-img{
+    width: 100%;
+    background: url(../img/topfoot-spr.png) no-repeat;
+}
+.bg-comm{
+    background: url(../img/comm-spr.png) no-repeat;
+}
+.bg-index{
+    background: url(/img/index-spr.png) no-repeat;
+}
+#header{
+    position: relative;
+    margin: 0 auto;
+    width: 1900px;
+    height: 360px;
+    background: url(../img/0.jpg) no-repeat center/cover;
+}
+#header .bg{
+    width: 1900px;
+    height: 130px;
+    background: url(../img/dark-jianbian-repeatx-0.png);
+}
+#header .bg .content .logo{
+    width: 160px;
+    height: 50px;
+    
+    background: url(../img/logo-public.png) no-repeat center/cover;
+}
+#header .bg .content .top{
+    height: 60px;
+    padding-top: 20px;
+}
+#header .bg .content .header-content{
+    display: flex;
+    justify-items: center;
+    justify-content: space-between;
+    width: 685px;
+    margin-left: 60px;
+    text-align: center;
+}
+#header .bg .content .header-list{
+    position: absolute;
+    left: 0px;
+    top: 65px;
+    width: 1900px;
+    height: 00px;
+    background-color:rgba(0, 0, 0, 0.514);
+    overflow: hidden;
+}
+#header .bg .content .header-list:hover{
+    height: 300px;
+}
+#header .bg .content .header-content:hover+.header-list{
+    animation: down 1s forwards;
+}
+#header .bg .content .header-list ul{
+    position: absolute;
+    left: 25%;
+    top: 35px;
+    width: 685px;
+    height: 250px;
+    display: flex;
+}
+#header .bg .content .header-list ul li{
+    width: 20%;
+    line-height: 30px;
+    text-align: center;
+    font-size:  14px;
+    color:white;
+}
+#header .bg .content .header-list ul li i{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: -346px -83px;
+}
+#header .bg .content .header-list ul li .aa{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-position: -380px -65px;
+}
+#header .bg .content .header-list ul li a:hover{
+    color: #e9c06c;
+}
+#header .bg .content .header-content p{
+    color: white;
+    font-size: 20px;
+}
+#header .bg .content .header-content span{
+    color: #cccccc;
+    font-size: 12px;
+}#header .bg .content .top .log-wrap{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 350px;
+    line-height: 60px;
+}
+#header .bg .content .top .log-wrap .user-box{
+    z-index: 1;
+}
+#header .bg .content .top .log-wrap .user-box:hover+.down{
+    animation: down 1s forwards;
+}
+#header .bg .content .top .log-wrap .search{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-position: -380px -36px;
+}
+#header .bg .content .top .log-wrap .phone{
+    display: inline-block;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    background-position: -298px -83px;
+}
+#header .bg .content .top .log-wrap .phone:hover+.ewm{
+    animation: down 1s forwards;
+}
+#header .bg .content .top .log-wrap .ewm{
+    position: absolute;
+    text-align: center;
+    top: 40px;
+    left: -48px;
+    height: 0px;
+    width: 211px;
+    overflow: hidden;
+    background:url(../img/topfoot-spr.png) no-repeat;
+}
+#header .bg .content .top .log-wrap .ewm:hover{
+    height: 178px;
+}
+#header .bg .content .top .log-wrap .ewm .aa{
+    
+    top: 10px;
+    left: 40px;
+    position: absolute;
+}
+#header .bg .content .top .log-wrap .ewm .bb{
+    top: 130px;
+    left: 165px;
+    position: absolute;
+}
+#header .bg .content .top .log-wrap .ewm span{
+    position: absolute;
+    left: 20px;
+    top: 130px;
+    color: #cdbe91;
+}
+#header .bg .content .top .log-wrap  .user{
+    display: inline-block;
+    margin-left: 20px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: url(../img/topfoot-spr.png)no-repeat -215px -117px , url(../img/default.png) no-repeat center;
+    margin-right: 10px;
+}
+#header .bg .content .top .log-wrap p{
+    font-size: 16px;
+    color: white;
+}
+#header .bg .content .top .log-wrap p b{
+    color: wheat;
+}
+#header .bg .content .top .log-wrap .down{
+    position: absolute;
+    left: 80px;
+    top: -20px;
+    width: 310px;
+    height: 0px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #ccc;
+    background-color: rgba(0, 0, 0, 0.514);
+    z-index: 0;
+}#header .bg .content .top .log-wrap .down:hover{
+    height: 292px;
+}
+#header .bg .content .top .log-wrap .down span:nth-child(1){
+    position: absolute;
+    top: 130px;
+    left: 28px;
+}
+#header .bg .content .top .log-wrap .down span:nth-child(4){
+    position: absolute;
+    top: 180px;
+    left: 40px;
+}
+#header .bg .content .top .log-wrap .down .bottom{
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    background-color: black;
+}
+#header .bg .content .top .log-wrap .down .right{
+    position: absolute;
+    left: 205px;
+    bottom: 12px;
+    width: 20px;
+    height: 12px;
+    background-position: -208px -125px;
+}
+#header .bg .content .top .log-wrap .down .bottom:hover .right{
+    animation: right 1s infinite;
+}
+#header .middle{
+    width: 162px;
+    height: 42px;
+    background-position: -215px -37px;
+    left:870px;
+    bottom: 30px;
+}
+#header .right{
+    right: 300px;
+    bottom: 30px;
+}
+#header .right div{
+    display: inline-block;
+    height: 20px;
+    width: 80px;
+    background-color: rgba(0, 0, 0, 0.438);
+    line-height: 20px;
+    text-align: center;
+    border: 2px solid #f5d185;
+    color: #f5d185;
+    font-size: 14px;
+}
+#header .right span{
+    color: #f5d185;
+}

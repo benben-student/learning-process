@@ -1,0 +1,365 @@
+#main{
+    margin-top: 40px;
+    color: #424242;
+}
+#main .swiper .content{
+    background-color: #eee;
+    height: 380px;
+}
+#main .swiper .content .wrap{
+    height: 100%;
+    width: 820px;
+    overflow: hidden;
+}
+#main .swiper .content .wrap .img ul{
+    position: relative;
+    left: 0%;
+    width: 500%;
+    height: 340px;
+    transition: .5s;
+}
+#main .swiper .content .wrap .img ul li{
+    float: left;
+    width:20% ;
+    height: 100%;
+}
+#main .swiper .content .wrap .tab{
+    height: 40px;
+}
+#main .swiper .content .wrap .tab ul{
+    width: 100%;
+    height:40px ;
+    background-color:#e3e2e2 ;
+}
+#main .swiper .content .wrap .tab li{
+    float: left;
+    width: 164px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 38px;
+}
+#main .swiper .content .wrap .tab .active{
+    background-color: white;
+    color: #cea861;
+    border-bottom: 2px #cea861 solid;
+}
+#main .swiper .content .right-list {
+    right: 0px;
+    top: -2px;
+    width: 500px;
+    height: 100%;
+    /* background-color: red; */
+}
+#main .swiper .content .right-list .nav-list{
+    display: flex;
+    justify-content: space-between;
+    height: 36px;
+    line-height: 36px;
+    width: 100%;
+    font-size: 16px;
+    background-position: -270px 0px;
+}
+#main .swiper .content .right-list .nav-list li{
+    position: relative;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+#main .swiper .content .right-list .nav-list li i{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    height: 10px;
+    opacity: 0;
+    transition:opacity .2s;
+}
+#main .swiper .content .right-list .nav-list .on i{
+    opacity: 1;
+    background-position: -276px 0px;
+}
+#main .swiper .content .right-list .nav-list li:hover i{
+    opacity: 1;
+    background-position: -276px 0px;
+}
+#main .swiper .content .right-list h3{
+    height: 58px;
+    line-height: 58px;
+    width: 100%;
+    font-size: 22px;
+    color:#0da0b4 ;
+    text-align: center;
+    border-bottom: 1px solid #e0e2e2 ;
+    border-top: 1px solid #e0e2e2 ;
+    background: url(../img/index-spr.png) no-repeat 0px -462px;
+}
+#main .swiper .content .right-list h3:hover{
+    color:#bb9a6c ;
+}
+#main .swiper .content .right-list .list li{
+    height: 40px;
+    line-height: 40px;
+    border-top: 1px solid #e0e2e2;
+}
+#main .swiper .content .right-list .list li:first-child{
+    border: none;
+}
+#main .swiper .content .right-list .list li i{
+    color:#c5ab86  ;
+    width: 36px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin-right: 20px;
+    margin-top: 8px;
+    border: 1px solid #c5ab86;
+}
+#main .swiper .content .right-list .list li:hover{
+    color: #bb9a6c;
+}
+#main .swiper .content .right-list .list li b{
+    color:  #9d9d9d;
+}
+#main .swiper .content .right-list .list li:last-child{
+    background: #e3e2e2;
+    text-align: center;
+    transition: .2s;
+}
+#main .swiper .content .right-list .list li:last-child a{
+    color: #7ea1a6;
+}
+#main .swiper .content .right-list .list li:last-child a::after{
+    content: "";
+    display: inline-block;
+    margin-left: 2px;
+    width: 20px;
+    height: 10px;
+    background: url(../img/comm-spr.png) no-repeat -212px -125px;
+}
+#main .swiper .content .right-list .list li:last-child:hover a::after{
+    animation:right 1s infinite;
+}
+#main .swiper .content .right-list .list li:last-child:hover{
+    color: black;
+    background-color: #dad8d8;
+}
+.action{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+    height: 340px;
+    background-color:rgb(238,238,238,);
+}
+.action .left{
+    width: 830px;
+    height: 100%;
+    background-color: #eee;
+}
+.action .left .top{
+    display: flex;
+    height: 30px;
+    width: 100%;
+}
+.action .left .top #action{
+    box-sizing: border-box;
+    text-align: center;
+    width: 105px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    border-left: 5px solid rgb(29,166,186);
+}
+.action .left .top .tittle{
+    width: 696px;
+    border-bottom: 1px solid rgba(128, 123, 123, 0.452);
+    margin-left: 30px;
+}
+.action .left .top .tittle ul{
+    display: flex;
+}
+.action .left .top .tittle ul li{
+    font-size: 13px;
+    line-height: 30px;
+    width: 58px;
+    margin-right: 39px;
+}
+.action .left .top .tittle ul li:hover i{
+    opacity: 1;
+}
+.action .left .top .tittle ul li i{
+    display: inline-block;
+    opacity: 0;
+    top: 26px;
+    left: 0px;
+    width: 58px;
+    height: 8px;
+    background-position: -263px 0px;
+}
+.action .left .top .tittle ul .more{
+    color:skyblue;
+    margin-left:360px;
+    margin-right: 0px;
+}
+.action .left .top .tittle ul .more:hover i{
+    animation: right 1s infinite;
+}
+.action .left .top .tittle ul .more i{
+    display: inline-block;
+    opacity: 1;
+    top: 10px;
+    left: 30px;
+    width: 17px;
+    height: 10px;
+    background-position: -210px -125px;
+}
+.action .left .box{
+    margin-top: 34px;
+    width: 830px;
+    height: 276px;
+
+}
+.action .left .box li{
+    border: 1px solid #cccccc;
+    width: 193px;
+    height: 270px;
+    transition: .3s;
+}
+.action .left .box li:nth-child(1){
+   background: url(../img/1-1.webp) no-repeat;
+   background-size: 193px 207px;
+}
+.action .left .box li:nth-child(2){
+    background: url(../img/1-2.webp) no-repeat;
+    background-size: 193px 207px;
+ }
+ .action .left .box li:nth-child(3){
+    background: url(../img/1-3.webp) no-repeat;
+    background-size: 193px 207px;
+ }
+ .action .left .box li:nth-child(4){
+    background: url(../img/1-4.webp) no-repeat;
+    background-size: 193px 207px;
+ }
+ 
+.action .left .box li img{
+    height: 207px;
+    width: 193px;
+}
+.action .left .box li:hover{
+    transform: translateY(-10px);
+}
+.action .left .box li:hover .p-text{
+    color: steelblue;
+}
+.action .left .box li .bottom{
+
+    display: inline-block;
+    background-color: #fff;
+}
+.action .left .box li p{
+    top: 209px;
+    margin-left: 5px;
+}
+.action .left .box li .span-taxt{
+    bottom: 0;
+    left: 5px;
+    font-size: 12px;
+    color:steelblue;
+}
+.action .left .box ul{
+    display: flex;
+    justify-content: space-between;
+}
+.action .left .box li:hover .pic-text{
+    opacity: 1;
+}
+.action .left .box li .pic-text{
+    opacity: 0;
+    height: 207px;
+    width: 193px;
+    background-position: 02px -250px;
+    background-color: #00000083;
+    transition: .3s;
+}
+.action .left .box li .pic-text .text{
+    top: 50px;
+    left: 8px;
+    width: 170px;
+    text-align: center;
+}
+.action .left .box li .pic-text .text h3{
+    color: rgb(205, 190, 140);
+    font-size: 15px;
+}
+.action .left .box li .pic-text .text p{
+    margin-top:5px ;
+    color: rgb(140, 153, 90);
+    font-size: 12px;
+}
+.action .left .box li .pic-text .text span{
+    margin-top:5px ;
+    font-size: 10px;
+    color: rgb(140, 153, 90);
+    
+}
+.action .right{
+    width: 500px;
+    height: 336px;
+    background-color:#cccccc;
+}
+.action .right .top li:nth-child(1){
+    width: 366px;
+    height: 167px;
+    background-color: blue;
+}
+.action .right .top li:nth-child(2){
+    width: 120px;
+    height: 78px;
+    right: 0;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    line-height: 78px;
+    background-position: -192px -318px;
+}
+.action .right .top li:nth-child(3){
+    width: 120px;
+    height: 78px;
+    right: 0;
+    top: 89px;
+    font-size: 14px;
+    color: white;
+    text-align: center;
+    line-height: 78px;
+    background-position: -192px -315px;
+}
+.action .right .bottom{
+    bottom: 0;
+    height: 151px;
+    width: 100%;
+
+}
+.action .right .bottom ul{
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+.action .right .bottom li{
+    width: 114px;
+    height: 68px;
+    background-color:white;
+    text-align: center;
+    line-height: 68px;
+}
+.action .right .bottom li i{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    background-position: -313px -10px;
+    vertical-align: middle;
+}
