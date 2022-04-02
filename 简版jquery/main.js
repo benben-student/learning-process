@@ -61,3 +61,12 @@ Node.prototype.addClass = function addClass(node, classes) {
 }
 item3.getSiblings(item3)
 item3.addClass(item3, ['a', 'b', 'c'])
+
+// item3.getSiblings.call(item3)
+     //等价于item3.getSibling()
+// item3.addClass.call(item3,['a','b','c'])
+     //item3.addClass(['a','b','c'])
+
+
+
+
