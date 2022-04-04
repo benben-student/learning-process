@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+             color: red;
+        }
+        .images {
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.5s;
+            /* transition: transform 0.5s; */
+        }
+
+        .images>img {
+            vertical-align: top;
+        }
+
+        .window {
+            width: 300px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="window">
+        <div class="images" id="images">
+            <img src="./img/1.png" width="300" heigth="200" alt="">
+            <img src="./img/2.png" width="300" heigth="200" alt="">
+            <img src="./img/3.png" width="300" heigth="200" alt="">
+            <img src="./img/4.png" width="300" heigth="200" alt="">
+            <img src="./img/5.png" width="300" heigth="200" alt="">
+            <img src="./img/6.png" width="300" heigth="200" alt="">
+        </div>
+    </div>
+    <span id="buttons">
+        <span id="p1">第1张</span>
+        <span id="p2">第2张</span>
+        <span id="p3">第3张</span>
+        <span id="p4">第4张</span>
+        <span id="p5">第5张</span>
+        <span id="p6">第6张</span>
+    </span>
+    <!-- <script src="./main.js"></script> -->
+    <script src="./main2.js"></script>
+</body>
+
+</html>
