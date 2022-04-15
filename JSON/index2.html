@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h5>您的账户余额是<span id="amount">&&&amount&&&</span></h5>
+    <button id="button">打钱</button>
+    <script>
+        button.addEventListener('click',(e)=>{
+            let script=document.createElement('script')
+            script.ssrc='/pay'
+            document.body.appendChild(script)
+            script.onload=function(e){
+               e.currentTarget.remove()
+            }
+            script.onerror=function(){
+                alert('fail')
+                e.currentTarget.remove()
+            }
+        })
+    </script>
+</body>
+</html>
