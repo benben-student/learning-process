@@ -22,36 +22,29 @@ var server = http.createServer(function(request, response){
   console.log('方方说：含查询字符串的路径\n' + pathWithQuery)
 
   if(path === '/'){
+    let string=fs.readFileSync('./index.html','utf8')
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
-    response.write(`
-      <!DOCTYPE html>
-      <head>
-        <link rel="stylesheet" href="/style"/>
-      </head>
-
-      <body>
-         <h1>你好</h1>
-         <script src="/main"></script>
-      </body>
-    `)
+    response.write(string)
     response.end()
-  }else if (path === '/style'){
-    response.statusCode = 200
-    response.setHeader('Content-Type', 'text/css;charset=utf-8')
-    response.write(`
-        body{backgound-color: #ddd;}
-        h1{color: red}
-    `)
-    response.end()
-  }else if (path === '/main'){
+}else if(path==='/main.js'){
+    let string=fs.readFileSync('./main.js','utf8')
     response.statusCode = 200
     response.setHeader('Content-Type', 'text/javascript;charset=utf-8')
-    response.write(`
-        alert("这是js执行的")
-    `)
-    response.end()    
-  }else{
+    response.write(string)
+    response.end()
+}else if(path==='/xxx'){
+    response.statusCode=200
+    response.setHeader('Content-Type','text/xml')
+    response.write("<?xml version='1.0'>"+
+         '<note>abc</note>'+
+         '<to>fgh</to>'+
+         '<from>jhk</from>'+
+         "<heading>hgj</heading>"+
+         '<body>dsf</body>'+
+         '</note>'
+    )
+}else{
     response.statusCode = 404
     response.setHeader('Content-Type', 'text/html;charset=utf-8')
     response.write('呜呜呜')
