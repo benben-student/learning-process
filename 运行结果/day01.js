@@ -30,7 +30,7 @@ console.log('I\'m \"OK\"!')
 var s='Hello'
 s.toUpperCase//HELLO
 
-//toLowerCase
+//toLowerCase  变为小写
 var lower=s.toLowerCase
 lower;//hello
 
