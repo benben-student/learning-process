@@ -1,9 +1,9 @@
 myButton.addEventListener('click',(e)=>{
     let request=new XMLHttpRequest()
     request.open('get','http://jack.com:8002/xxx')//配置requset
-    request.send()                   //
-    request.onreadystatechange=()=>{//GET: /XXX   HTTP/1.1
-        if(request.readyState===4){//HOST:jack.com:8002
+    request.send()
+    request.onreadystatechange=()=>{
+        if(request.readyState===4){
             console.log('请求相应都完毕了')
             console.log(request.status)
             if(request.status>=200&&request.status<=300){
