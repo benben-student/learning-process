@@ -5,6 +5,11 @@ console.log(abc)
 
 
 
+
+
+
+
+
 //.split()
 var str='123'
 var a=str.split('')//给所有加上''
@@ -20,7 +25,10 @@ console.log(c)//将返回'2''3''4'
 
 
 
-//[]转化为'' , ''转化为[]
+
+
+
+
 var obj=[1,2,3]
 var aa=obj.join('-')
 console.log(aa)
