@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       //a&&b&&c   只要有一个为false,则整个为false => 0
+       console.log(1&&4&&1)
+       console.log(2&&1&&0)
+
+
+       //a||b||c   只要有一个为true,则整个为true => 1
+       console.log(1||12||0||undefined)
+       console.log(23||34||56||true)//若都为true,则打印出第一个值
+
+
+       var app=app || {}
+                   //等价于
+                    if(app){
+                        app=app
+                    }else{
+                        {}
+                    }
+    </script>
+    
+</body>
+</html>
