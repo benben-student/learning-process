@@ -27,3 +27,6 @@ var id=setInterval(()=>{
        window.clearInterval(id)
     }
 },100)
+
+
+
