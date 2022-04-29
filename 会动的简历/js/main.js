@@ -13,6 +13,19 @@ function writeCode(prefix, code, fn) {
         }
     }, 10)
 }
+function writeMarkdown(markdown,fn){
+      let domPaper=document.querySelector('#paper>.content')
+      let n=0
+      let id = setInterval(() => {
+      n += 1
+      domCode.innerHTML = (markdown.substring(0, n))
+      domCode.scrollTop = domCode.scrollHeight
+      if (n >= code.length) {
+          window.clearInterval(id)
+          fn.call()
+      }
+  }, 0)
+}
 var result = `/*
 *面试官你好，我是奔奔
 *我将以动画的形式来介绍我自己
@@ -57,20 +70,32 @@ html{
     color: black;
   }
   #code {
+    position:fixed;
+    left:0;
     height: 100vh;
-    overflow: hidden;
+    background:#ddd;
+    dispaly:flex;
+    justify-content:center;
+    aligh-items:center;
+  }
+  #paper > .content{
+
   }
 `
+
+
 var result2 = `
 #paper{
-    width:100px;
-    height:100px;
-    background:red;
+   
 }
 `
+//为什么writeCode是异步任务/函数
+//createPaper是异步任务/函数
 writeCode('', result, () => {//writeCode call the function
     createPaper(() => {
-        writeCode(result, result2)
+        writeCode(result, result2,()=>{
+          writeMarkdown()
+        })
     })
 })//定闹钟：50毫秒之后开始写第一行代码啊
 //1.定闹钟
@@ -84,6 +109,9 @@ writeCode('', result, () => {//writeCode call the function
 function createPaper(fn) {
     var paper = document.createElement('div')
     paper.id = 'paper'
+    var content=document.createElement('div')
+    content.className='content'
+    paper.appendChild(content)
     document.body.appendChild(paper)
     fn.call()
 }
