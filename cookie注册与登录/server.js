@@ -43,7 +43,7 @@ var server = http.createServer(function (request, response) {
     response.write(string)
     response.end()
   } else if (path === '/sign_up' && method === 'POST') {
-    readyBody(request).then((body) => {
+    readBody(request).then((body) => {
       let strings = body.split('&')//['email=1','password=2','password_confirmation=3']
       let hash = {}
       strings.forEach((string) => {
@@ -70,7 +70,7 @@ var server = http.createServer(function (request, response) {
       }else{
         var users=fs.readFileSync('./db/users','utf8')
         users=JSON.parse(users)
-        users.push({email:email,password:password})
+        users.push({ email : email , password : password })
         fs.writeFileSync('./db/users',users)
         response.statusCode=200
       }
@@ -109,7 +109,7 @@ var server = http.createServer(function (request, response) {
 
   /******** 代码结束，下面不要看 ************/
 })
-function readyBody(request) {
+function readBody(request) {
   return new Promise((resolve, reject) => {
     let body = []
     request.on('data', (chunk) => {
