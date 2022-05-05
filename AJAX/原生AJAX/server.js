@@ -29,6 +29,20 @@ app.all('/json-server', (request, response) => {
 
     response.send(str)
 })
+app.get('/ie', (request, response) => {
+    //设置响应头
+    response.setHeader('Access-Control-Allow-Origin', '*')
+    response.send('HELLO IE-2') 
+})
+//延时响应
+app.get('/delay', (request, response) => {
+    //设置响应头
+    response.setHeader('Access-Control-Allow-Origin', '*')
+    setTimeout(()=>{
+        response.send('延时响应') 
+    },3000)
+})
+
 app.listen(8000, () => {
     console.log('服务已经启动，8000端口监听中...')
 })
