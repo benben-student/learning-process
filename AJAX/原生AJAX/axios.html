@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.27.2/axios.js"></script>
+</head>
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>通用型方法AJAX</button>
+    <script>
+        const btns=document.querySelectorAll('button')
+        //配置baseURL   
+        axios.defaults.baseURL='http://127.0.0.1:8000'
+        btns[0].onclick=function(){
+            //GET请求
+            axios.get('http://127.0.0.1:8000/axios-server',{
+                //url参数
+                params:{
+                    id:100,
+                    vip:7
+                },
+                //请求头信息
+                headers:{
+                    name:'benben',
+                    age:20
+                }
+            }).then(value=>{
+                console.log(value)
+            })
+        }
+        btns[1].onclick=function(){
+            axios.post('/axios-server',{
+               
+                    username:'admin',
+                    password:'admin'
+               
+            },
+            {
+              //url
+              params:{
+                    id:200,
+                    vip:9
+                },
+                //请求头参数
+                headers:{
+                    height:100,
+                    weight:100
+                },
+                //请求体
+           
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
