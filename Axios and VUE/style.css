@@ -1,0 +1,11 @@
+.slides{
+    width: 300px;
+    background: red;
+    height: 100px;
+    transition: all 1s;
+}
+.window{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+}
