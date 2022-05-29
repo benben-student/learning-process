@@ -1,0 +1,7 @@
+.red{
+    color: red;
+    border: 1px solid green;
+}
+.parent{
+    border: 1px solid black;
+}
