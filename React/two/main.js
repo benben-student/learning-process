@@ -7,14 +7,16 @@ class App extends React.Component {
         }
         this.t0 = new Date()
     }
-    success1() {
+    success1(x) {
+        console.log(x)
         console.log('兔子跑完了,用时')
         let r1 = new Date() - this.t0
         this.setState({
             result1: r1
         })
     }
-    success2() {
+    success2(x) {
+        console.log(x)
         console.log('乌龟跑完了,用时')
         let r2 = new Date() - this.t0
         this.setState({
@@ -68,7 +70,7 @@ class Track1 extends React.Component {
             })
             if (n >= 100) {
                 window.clearInterval(TimeId)
-                this.props.success()
+                this.props.success('我是兔子')
             }
         }, 1000)
     }
@@ -99,7 +101,7 @@ class Track2 extends React.Component {
             })
             if (n >= 100) {
                 window.clearInterval(TimeId)
-                this.props.success()
+                this.props.success('我是乌龟')
             }
         }, 1000)
     }
