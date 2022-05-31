@@ -1,0 +1,15 @@
+﻿.header{
+    display:flex;
+    justify-content: center;
+}
+.track{
+    border-bottom: 1px solid black;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    padding: 40px;
+}
