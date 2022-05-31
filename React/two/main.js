@@ -3,4 +3,4 @@ function App(){
         <h1>hi</h1>
     )
 }
-ReactDOM.render(<App/>,document.querySelector('#root'))
+ReactDOM.render(<App></App>,document.querySelector('#root'))
