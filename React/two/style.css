@@ -10,6 +10,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.playground{
+    border: 1px solid black;
+    background: greenyellow;
+}
 body{
     padding: 40px;
 }
