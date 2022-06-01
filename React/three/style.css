@@ -1,0 +1,21 @@
+﻿.root{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+      padding: 10px;
+}
+.papa{
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px;
+}
+.son{
+    border: 1px solid red;
+    padding: 10px;
+    margin: 10px ;
+}
+.son button{
+    
+    color: red;
+}
