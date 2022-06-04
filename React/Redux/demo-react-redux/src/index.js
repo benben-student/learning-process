@@ -30,11 +30,17 @@ function add3() {
     store.dispatch({ type: 'add', payload: 1 })
   }
 }
+function add4() {
+  setTimeout(()=>{
+    store.dispatch({type:'add',payload:1})
+  },2000)
+}
 function render() {
   ReactDOM.render(<App value={store.getState()}
     onAdd1={() => { store.dispatch({ type: 'add', payload: 1 }) }}
     onAdd2={() => { store.dispatch({ type: 'add', payload: 2 }) }}
     onAdd3={add3}
+    onAdd4={add4}
   />, document.getElementById('root'))
 }
 
