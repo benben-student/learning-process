@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 
 class App extends Component {
   add1() {
@@ -27,4 +28,18 @@ class App extends Component {
     );
   }
 }
-export default App;
+
+function getPartialStore(state){
+  return {
+    n:state.n
+  }
+}
+const actionCreator={
+    add1:()=>{
+      return {type:'add',payload:1}
+    }
+}
+
+
+
+export default connect(getPartialStore,actionCreator)(App);
