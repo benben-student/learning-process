@@ -16,20 +16,22 @@ function F2(props) {
 }
 function F3(props) {
     return
-    <div className='bordered'>3333,{props.n3}
-        <F4 n4={props.n3}></F4>
+    <div className='bordered'>3333
+        <nContext.Consumer>
+            {(n) => <F4 n4={n} />}
+        </nContext.Consumer>
     </div>
 }
 function F4(props) {
     return
     <div className='bordered'>
         <nContext.Consumer>
-        4444,{props.n4}
+            4444,{props.n4}
         </nContext.Consumer>
     </div>
 
 }
-const nContext=React.createContext(100)
+const nContext = React.createContext(100)
 class App1 extends React.Component {
     constructor() {
         super()
@@ -40,8 +42,8 @@ class App1 extends React.Component {
     render() {
         return (
             <div>
-                <nContext.Provider value='99'>
-                   <F1 n1={this.state.n}></F1>
+                <nContext.Provider value='67'>
+                   <F1/>
                 </nContext.Provider>
             </div>
         )
