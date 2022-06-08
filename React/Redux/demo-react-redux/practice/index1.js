@@ -18,31 +18,38 @@ function F3(props) {
     return
     <div className='bordered'>3333
         <nContext.Consumer>
-            {(n) => <F4 n4={n} />}
+            {(n) => <F4 n4={x.n} setN={x.setN}/>}
         </nContext.Consumer>
     </div>
 }
 function F4(props) {
     return
     <div className='bordered'>
-        <nContext.Consumer>
             4444,{props.n4}
-        </nContext.Consumer>
+            <button onClick={props.setN()}>Click me</button>
     </div>
 
 }
 const nContext = React.createContext(100)
+
 class App1 extends React.Component {
     constructor() {
         super()
         this.state = {
-            n: 99
+           x:{
+               n:67,
+               setN:()=>{
+                   this.setState(
+                       {x:{n:Math.random()}}
+                   )
+               }
+           }
         }
     }
     render() {
         return (
             <div>
-                <nContext.Provider value='67'>
+                <nContext.Provider value={value}>
                    <F1/>
                 </nContext.Provider>
             </div>
