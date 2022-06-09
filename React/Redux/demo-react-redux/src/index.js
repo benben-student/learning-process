@@ -1,75 +1,33 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { useState } from 'react'
-
-// class App2 extends React.Component{
-//     constructor(){
-//         super()
-//         this.state={
-//             count:0
-//         }
-//     }
-//     add=()=>{
-//         this.setState({
-//             count:this.state.count+1
-//         })
-//     }
-//     render(){
-//         return(
-//             <div>
-//                 <div>{this.state.count}</div>
-//                 <div>
-//                     <button onClick={this.add}>+1</button>
-//                 </div>
-//             </div>
-//         )
-//     }
-// }
-
-
-
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import './style.css'
+function Box1() {
+    return (
+        <div class='box'>注册</div>
+    )
+}
+function Box2() {
+    return (
+        <div class='box'>登录</div>
+    )
+}
 function App() {
-    const [count/*值*/, setCount/*更新函数*/] = useState(0)
-    const [user, setUser] = useState(
-        {
-            name: 'frank', age: 18,
-            hobbies: ['LOL', 'Dog', 'code']
-        })
-    const add = () => {
-        setCount(count + 1)
+    let hash=window.location.hash
+    let initUi=hash==='#signup' ? '注册':'登录'
+    let [ui, setUi] = useState('initUi')
+    let onClickLogin=()=>{
+        setUi('登录')
+        window.location.hash='login'
     }
-    const minus = () => {
-        setCount(count - 1)
-    }
-    const old = () => {
-        setUser({
-            ...user,
-            age: user.age + 1
-        })
-    }
-    const addHobby = () => {
-        user.hobbies.splice(1, 1)
-        setUser({
-            ...user,
-            hobbies: user.hobbies
-        })
+    let onClickSignUp=()=>{
+        setUi('注册')
+        window.location.hash='signup'
     }
     return (
-        <div>
-            <div>{count}</div>
-            <div>
-                <div>
-                    <button onClick={add}>+1</button>
-                    <button onClick={minus}>-1</button>
-                </div>
-            </div>
-            <div>
-                {user.name},{user.age},<br />{user.hobbies.join(',')}
-            </div>
-            <div>
-                <button onClick={old}>+1</button>
-                <button onClick={addHobby}>增加爱好</button>
-            </div>
+        <div className="App">
+            <button onClick={onClickLogin}>登录</button>
+            <button onClick={onClickSignUp}>注册</button>
+            <div>/{ui === '注册' ? <Box1 /> : <Box2 />}</div>
         </div>
     )
 }
